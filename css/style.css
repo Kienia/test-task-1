@@ -1,0 +1,269 @@
+/*Подключенные шрифты*/
+@font-face {
+    font-family: opensans;
+    font-display: swap;
+    src: url(../fonts/opensans-bold.woff2) format("woff2"), url(../fonts/opensans-bold.woff) format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: opensans;
+    font-display: swap;
+    src: url(../fonts/opensans-regular.woff2) format("woff2"), url(../fonts/opensans-regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+/*Страница и общие стили*/
+body {
+    line-height: 1;
+    font-family: "opensans";
+    font-size: 14px;
+    color: #333333;
+}
+
+.lock {
+    overflow: hidden;
+}
+
+.app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.app__page {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.app__header, .app__footer {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.app__footer {
+    display: grid;
+    gap: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.085em;
+}
+
+.app__title {
+    font-size: 28px;
+}
+
+.app__link {
+    justify-self: center;
+    width: max-content;
+    color: #8bc34a;
+}
+
+
+.button {
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 10px 25px;
+    border-radius: 16px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #333333;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+/*Блок pay*/
+.pay {
+}
+
+.pay__caption {
+    margin: 0 0 40px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.pay__caption_center {
+    text-align: center;
+}
+
+.pay__success{
+    display: none;
+}
+
+.pay__success_show {
+    display: grid;
+    gap: 20px;
+}
+
+.pay__icon {
+    justify-self: center;
+    width: 60px;
+    height: 60px;
+    fill: #8bc34a;
+}
+
+/*Форма*/
+.pay-form {
+}
+
+.pay-form_hide {
+    display: none;
+}
+
+.pay-form__fields {
+    display: grid;
+    gap: 20px;
+    margin: 0 0 40px;
+}
+
+.pay-form__field {
+    position: relative;
+    display: grid;
+    gap: 6px;
+}
+
+.pay-form__label {
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.pay-form__label_active {
+    color: #8bc34a;
+}
+
+.pay-form__label_error {
+    color: #ff0000;
+}
+
+.pay-form__input {
+    display: block;
+    border: 1px solid #cccccc;
+    width: 100%;
+    height: 60px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+.pay-form__input_active {
+    border-color: #8bc34a;
+}
+
+.pay-form__input_error {
+    border-color: #ff0000;
+}
+
+.pay-form__input_active::placeholder {
+    opacity: 0;
+}
+
+.pay-form__error {
+    position: absolute;
+    left: 8px;
+    bottom: -5px;
+    padding: 0 8px;
+    font-size: 12px;
+    color: #ff0000;
+    background-color: #ffffff;
+}
+
+.pay-form__button {
+    width: 100%;
+}
+
+/*Модальное окно*/
+.popup {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    visibility: hidden;
+    transition: visibility 0.3s, top 0.3s;
+}
+
+.popup_show {
+    top: 0;
+    visibility: visible;
+}
+
+.popup__content {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    max-height: 100%;
+    padding: 30px;
+    border-radius: 16px;
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+.popup__close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.popup__close::before, .popup__close::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: currentColor;
+    transition: background-color 0.3s;
+}
+
+.popup__close::before {
+    transform: rotate(45deg);
+}
+
+.popup__close::after {
+    transform: rotate(-45deg);
+}
+
+/*Затемнение страницы*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    z-index: 98;
+    transition: visibility 0.3s, background-color 0.3s;
+}
+
+.overlay_show {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.64);
+}
+
+/*Hover и Active*/
+@media (any-hover: hover) {
+    .button:hover, .popup__close:hover::before, .popup__close:hover::after {
+        background-color: #8bc34a;
+    }
+
+    .app__link:hover {
+        text-decoration: underline;
+    }
+}
+
+.button:active{
+    background-color: #4caf50;
+}

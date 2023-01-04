@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/null.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Тестовая работа | Киеня Константин</title>
+</head>
+<body>
+<div class="app">
+    <header class="app__header">
+        <h1 class="app__title">Сервис оплаты</h1>
+    </header>
+    <main class="app__page">
+        <button class="button" data-show-popup>Показать форму</button>
+    </main>
+    <footer class="app__footer">
+        <span>Выполнил: Киеня Константин</span>
+        <a href="https://github.com/kienia/test-task-1" target="_blank" class="app__link">Перейти на github</a>
+        <a href="tel:+79687851457" class="app__link">+7 (968) 785-14-57</a>
+    </footer>
+</div>
+<div class="popup">
+    <div class="popup__content">
+        <div class="popup__close"></div>
+        <div class="pay">
+            <form class="pay-form">
+                <fieldset class="pay-form__fields">
+                    <legend class="pay__caption">Форма оплаты</legend>
+                    <div class="pay-form__field">
+                        <label for="firstname" class="pay-form__label">Имя:</label>
+                        <input type="text" id="firstname" placeholder="Константин" class="pay-form__input">
+                    </div>
+                    <div class="pay-form__field">
+                        <label for="lastname" class="pay-form__label">Фамилия:</label>
+                        <input type="text" id="lastname" placeholder="Киеня" class="pay-form__input">
+                    </div>
+                    <div class="pay-form__field">
+                        <label for="phone" class="pay-form__label">Телефон:</label>
+                        <input type="tel" id="phone" placeholder="+79687851457" class="pay-form__input">
+                    </div>
+                    <div class="pay-form__field">
+                        <label for="email" class="pay-form__label">E-mail:</label>
+                        <input type="email" id="email" placeholder="kienia@tut.by" class="pay-form__input">
+                    </div>
+                </fieldset>
+                <button type="button" class="button pay-form__button">Отправить платеж</button>
+            </form>
+            <div class="pay__success">
+                <svg class="pay__icon" viewBox="0 0 32 32">
+                    <path d="M12.104 20.856l12.856-12.856 1.707 1.707-14.563 14.563-6.771-6.769 1.707-1.707z"/>
+                </svg>
+                <span class="pay__caption pay__caption_center">Успешно!</span>
+                <button class="button" data-new-pay>Новый платеж</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlay"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
